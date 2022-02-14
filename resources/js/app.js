@@ -6,11 +6,8 @@
 
 require("./bootstrap");
 
-Echo.channel("notifications").listen("UserSessionChanged", (e) => {
+Echo.private("notifications").listen("UserSessionChanged", (e) => {
     const notificationElement = document.getElementById("notification");
-
-    console.log("Notificacion: " + e.message + " " + e.type);
-    console.log(notificationElement);
 
     notificationElement.innerText = e.message;
     notificationElement.classList.remove("invisible");

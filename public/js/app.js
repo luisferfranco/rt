@@ -5299,10 +5299,8 @@ __webpack_require__.r(__webpack_exports__);
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-Echo.channel("notifications").listen("UserSessionChanged", function (e) {
+Echo["private"]("notifications").listen("UserSessionChanged", function (e) {
   var notificationElement = document.getElementById("notification");
-  console.log("Notificacion: " + e.message + " " + e.type);
-  console.log(notificationElement);
   notificationElement.innerText = e.message;
   notificationElement.classList.remove("invisible");
   notificationElement.classList.remove("alert-success");
